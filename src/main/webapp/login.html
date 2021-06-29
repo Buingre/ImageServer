@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>登录页面</title>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/vue.js"></script>
+
+</head>
+<body>
+    <div id="app">
+        <h2>用户登录</h2>
+        <!-- ajax是表单默认的提交方式   -->
+        <form  v-on:submit.prevent="login()">
+            用户名：<input type="text" v-model="username">
+            <br><br>
+            密码：<input type="password" v-model="password">
+            <p style="color: red">{{message}}</p>
+            <br><br>
+            <input type="submit" value="登录">
+        </form>
+    </div>
+    <script>
+        let app = new Vue({
+            el: "#app",
+            data: {
+                username: '',
+                password: '',
+                message: ''
+            },
+            methods: {
+                login: function () {
+                   // alert(this.username+", "+this.password)
+                    $.ajax({
+                        url:"login",
+                        type:"post",
+                        data:"username="+app.username+"&password="+app.password,
+                        context: this,
+                        //然后去写后端，再来继续下边的
+                        success: function(data, status) {
+                            //如果登陆成功后，跳转到首页
+                            if(data.ok){
+                                window.location.href = "index.html";
+                            }else {//登陆失败，提示
+                                app.message = data.msg;
+                            }
+
+                        }
+                    })
+                }
+            }
+        });
+    </script>
+</body>
+</html>

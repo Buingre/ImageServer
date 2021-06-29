@@ -1,0 +1,195 @@
+<!--Author: W3layouts
+Author URL: http://w3layouts.com
+License: Creative Commons Attribution 3.0 Unported
+License URL: http://creativecommons.org/licenses/by/3.0/
+-->
+<!DOCTYPE HTML>
+<html lang="zxx">
+
+<head>
+	<title>欢迎登录~</title>
+	<!-- Meta tag Keywords -->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta charset="UTF-8" />
+	<meta name="keywords" content="Validate Login & Register Forms Responsive Widget,Login form widgets, Sign up Web forms , Login signup Responsive web form,Flat Pricing table,Flat Drop downs,Registration Forms,News letter Forms,Elements" />
+	<script src="jquery-1.9.1.min.js"></script>
+	<script>
+		addEventListener("load", function () {
+			setTimeout(hideURLbar, 0);
+		}, false);
+
+		function hideURLbar() {
+			window.scrollTo(0, 1);
+		}
+	</script>
+	<!--注册-->
+	<script>
+
+		function mysub1() {
+			//拿到控件
+			var username = jQuery("#username");
+			var password1 = jQuery("#password1");
+			var password2 = jQuery("#password2");
+			//1.先进行非空校验
+			if(username.val().trim()==""){
+				alert("请先输入用户名！");
+				username.focus();
+				return false;
+			}
+			if(password1.val().trim()==""){
+				alert("密码不能为空！");
+				password1.focus();
+				return false;
+			}
+			if(password2.val().trim()==""){
+				alert("请输入确认密码！");
+				password2.focus();
+				return false;
+			}
+
+			//2.判断两次输入的密码是否一致
+			if(password1.val()!=password2.val()){
+				alert("两次输入的密码不一致，请检查！");
+				password1.focus();
+				return false;
+			}
+			//3.提交信息给后端
+			jQuery.getJSON("reglogin",{
+				"username":username.val(),//后端可以接受的这俩参数
+				"password1":password1.val(),
+				"flag":"1"
+			},function (data) {//回调函数，data是服务器返回的数据
+				if(data!=null && data.state==200){
+					//说明请求成功
+					alert("恭喜：您已注册成功！");
+				}else {
+					alert("抱歉：注册失败，请重试！");
+				}
+			});
+
+		}
+	</script>
+<!--	登录 -->
+	<script>
+		function mysub2() {
+			//拿到控件
+			var name = jQuery("#name");
+			var password = jQuery("#password");
+			//1.非空校验
+			if(name.val().trim()==""){
+				alert("请先输入用户名！");
+				username.focus();
+				return false;
+			}
+			if(password.val().trim()==""){
+				alert("密码不能为空！");
+				password1.focus();
+				return false;
+			}
+
+			//2.提交信息给后端，让后端在数据库中判断输入的信息是否正确
+			jQuery.getJSON("reglogin",{
+					"name":name.val(),
+					"password":password.val(),
+					"flag":"2"
+				},function (data) {
+				if(data!=null && data.state==200){
+					//说明请求成功
+					//todo:后面再写跳转业务
+					alert("登录成功！");
+					window.location.href = "index.html";
+				}else {
+					alert("用户名或密码错误，请重新输入"+data.msg);
+				}
+			});
+		}
+	</script>
+	<!-- Meta tag Keywords -->
+
+	<!-- css files -->
+	<link rel="stylesheet" href="dlzc/css/style.css" type="text/css" media="all" />
+	<!-- Style-CSS -->
+	<link href="dlzc/css/font-awesome.min.css" rel="stylesheet">
+	<!-- Font-Awesome-Icons-CSS -->
+	<!-- //css files -->
+	<!-- web-fonts -->
+	<link href="//fonts.googleapis.com/css?family=Magra:400,700&amp;subset=latin-ext" rel="stylesheet">
+	<!-- //web-fonts -->
+</head>
+
+<body>
+	<!-- title -->
+	<h1 style="color: rgba(81,84,85,0.68);text-align: center">
+		云&nbsp; 图&nbsp; 床&nbsp;
+	</h1 >
+
+	<!-- //title -->
+
+	<!-- content -->
+	<div class="container-agille">
+		<div class="formBox level-login">
+			<div class="box boxShaddow"></div>
+
+			<!--登录部分-->
+			<div class="box loginBox">
+				<h3> 登 录 </h3>
+				<div class="info"  >
+					<div class="f_row-2">
+						<input type="text" class="input-field" id="name" name="name" placeholder="请输入您的用户名"  required>
+					</div>
+					<div class="f_row-2 last">
+						<input type="password" id="password" name="password" placeholder="请输入密码" class="input-field" required>
+					</div>
+					<input class="submit-w3" type="button" value=" 登 录 " onclick="mysub2()">
+					<!--删除了模板中的忘记密码-->
+				</div>
+			</div>
+
+
+			<!--注册部分-->
+			<div class="box registerBox wthree">
+				<span class="reg_bg"></span>
+				<h3> 注 册 </h3>
+				<div class="info" >
+					<div class="f_row-2">
+						<input type="text" class="input-field" placeholder="请输入用户名" id="username" name="username" required>
+					</div>
+					<div class="f_row-2 last">
+						<input type="password"  name="password1" placeholder="请输入密码" id="password1" class="input-field" required>
+					</div>
+					<div class="f_row-2 last">
+						<input type="password" name="password2" placeholder="再次确认密码" id="password2" class="input-field" required>
+					</div>
+					<input class="submit-w3" type="button" value=" 注 册 " onclick="mysub1()">
+				</div>
+			</div>
+			<a href="#" class="regTag icon-add">
+				<i class="fa fa-repeat" aria-hidden="true"></i>
+
+			</a>
+		</div>
+	</div>
+	<!-- //content -->
+
+
+
+
+	<!-- js files -->
+	<!-- Jquery -->
+	<script src="dlzc/js/jquery-2.2.3.min.js"></script>
+	<!-- //Jquery -->
+	<!-- input fields js -->
+	<script src="dlzc/js/input-field.js"></script>
+	<!-- //input fields js -->
+
+	<!-- password-script -->
+
+	<!-- //password-script -->
+	<!-- //js files -->
+
+
+
+
+</body>
+
+</html>

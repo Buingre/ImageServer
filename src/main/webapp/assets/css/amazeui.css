@@ -1877,8 +1877,8 @@ fieldset[disabled] .am-btn-danger.am-active {
 }
 .am-btn-success {
   color: #ffffff;
-  background-color: #5eb95e;
-  border-color: #5eb95e;
+  background-color: #b9ae5ebf;
+  border-color: #b9ae5ebf;
 }
 a.am-btn-success:visited {
   color: #ffffff;
@@ -1916,8 +1916,8 @@ fieldset[disabled] .am-btn-success:active,
 .am-btn-success.am-disabled.am-active,
 .am-btn-success[disabled].am-active,
 fieldset[disabled] .am-btn-success.am-active {
-  background-color: #5eb95e;
-  border-color: #5eb95e;
+  background-color: #b9ae5ebf;
+  border-color: #b9ae5ebf;
 }
 .am-btn-group .am-btn-success,
 .am-btn-group-stacked .am-btn-success {
@@ -2225,7 +2225,7 @@ th {
 .am-table > thead > tr.am-success > th,
 .am-table > tbody > tr.am-success > th,
 .am-table > tfoot > tr.am-success > th {
-  color: #5eb95e;
+  color: #b9ae5ebf;
   background-color: rgba(94, 185, 94, 0.115);
 }
 .am-table > thead > tr > td.am-warning,
@@ -2742,14 +2742,14 @@ fieldset[disabled] .am-checkbox-inline {
 .am-form-success .am-radio-inline,
 .am-form-success .am-checkbox-inline,
 .am-form-success label {
-  color: #5eb95e;
+  color: #b9ae5ebf;
 }
 .am-form-success [class*="icon-"] {
-  color: #5eb95e;
+  color: #b9ae5ebf;
 }
 .am-form-success .am-form-field,
 .am-field-valid {
-  border-color: #5eb95e !important;
+  border-color: #b9ae5ebf !important;
   -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
           box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
 }
@@ -4061,7 +4061,7 @@ a.am-badge:focus {
   background-color: #3bb4f2;
 }
 .am-badge-success {
-  background-color: #5eb95e;
+  background-color: #b9ae5ebf;
 }
 .am-badge-warning {
   background-color: #f37b1d;
@@ -4256,16 +4256,16 @@ a.am-badge:focus {
   border-left-color: #f8f8f8;
 }
 .am-comment-success .am-comment-avatar {
-  border-color: #5eb95e;
+  border-color: #b9ae5ebf;
 }
 .am-comment-success .am-comment-main {
-  border-color: #5eb95e;
+  border-color: #b9ae5ebf;
 }
 .am-comment-success .am-comment-main:before {
-  border-right-color: #5eb95e;
+  border-right-color: #b9ae5ebf;
 }
 .am-comment-success.am-comment-flip .am-comment-main:before {
-  border-left-color: #5eb95e;
+  border-left-color: #b9ae5ebf;
   border-right-color: transparent;
 }
 .am-comment-success.am-comment-flip .am-comment-main:after {
@@ -4682,7 +4682,7 @@ a.am-close:hover {
   background-color: #3bb4f2;
 }
 .am-icon-btn.am-success {
-  background-color: #5eb95e;
+  background-color: #b9ae5ebf;
 }
 .am-icon-btn.am-warning {
   background-color: #f37b1d;
@@ -6526,13 +6526,13 @@ a.am-close:hover {
   border-color: #3bb4f2;
 }
 .am-input-group-success .am-input-group-label {
-  background: #5eb95e;
+  background: #b9ae5ebf;
   color: #ffffff;
 }
 .am-input-group-success .am-input-group-label,
 .am-input-group-success .am-input-group-btn > .am-btn,
 .am-input-group-success.am-input-group .am-form-field {
-  border-color: #5eb95e;
+  border-color: #b9ae5ebf;
 }
 .am-input-group-warning .am-input-group-label {
   background: #f37b1d;
@@ -6721,7 +6721,7 @@ a.am-close:hover {
   border-color: #c9e7c9;
 }
 .am-panel-success > .am-panel-hd {
-  color: #5eb95e;
+  color: #b9ae5ebf;
   background-color: rgba(94, 185, 94, 0.15);
   border-color: #c9e7c9;
 }
@@ -6943,7 +6943,7 @@ a.am-close:hover {
   background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
 }
 .am-progress-bar-success {
-  background-color: #5eb95e;
+  background-color: #b9ae5ebf;
 }
 .am-progress-striped .am-progress-bar-success {
   background-image: -webkit-gradient(linear, 0 100%, 100% 0, color-stop(0.25, rgba(255, 255, 255, 0.15)), color-stop(0.25, transparent), color-stop(0.5, transparent), color-stop(0.5, rgba(255, 255, 255, 0.15)), color-stop(0.75, rgba(255, 255, 255, 0.15)), color-stop(0.75, transparent), to(transparent));
@@ -7781,7 +7781,7 @@ img.am-thumbnail,
   color: #3bb4f2;
 }
 .am-text-success {
-  color: #5eb95e;
+  color: #b9ae5ebf;
 }
 .am-text-warning {
   color: #f37b1d;
@@ -8090,7 +8090,7 @@ img.am-thumbnail,
   color: #555555;
 }
 .am-alert-success {
-  background-color: #5eb95e;
+  background-color: #b9ae5ebf;
   border-color: #4bad4b;
   color: #ffffff;
 }
@@ -9132,13 +9132,13 @@ ul.am-dropdown-content > .am-disabled > a:focus {
   border-bottom-color: #3bb4f2;
 }
 .am-popover-success {
-  border-color: #5eb95e;
+  border-color: #b9ae5ebf;
 }
 .am-popover-success .am-popover-inner {
-  background: #5eb95e;
+  background: #b9ae5ebf;
 }
 .am-popover-success .am-popover-caret {
-  border-bottom-color: #5eb95e;
+  border-bottom-color: #b9ae5ebf;
 }
 .am-popover-warning {
   border-color: #f37b1d;
@@ -9173,7 +9173,7 @@ ul.am-dropdown-content > .am-disabled > a:focus {
   z-index: 2000;
   width: 100%;
   height: 2px;
-  background: #5eb95e;
+  background: #b9ae5ebf;
 }
 #nprogress .nprogress-peg {
   display: block;
@@ -9181,8 +9181,8 @@ ul.am-dropdown-content > .am-disabled > a:focus {
   right: 0;
   width: 100px;
   height: 100%;
-  -webkit-box-shadow: 0 0 10px #5eb95e, 0 0 5px #5eb95e;
-          box-shadow: 0 0 10px #5eb95e, 0 0 5px #5eb95e;
+  -webkit-box-shadow: 0 0 10px #b9ae5ebf, 0 0 5px #b9ae5ebf;
+          box-shadow: 0 0 10px #b9ae5ebf, 0 0 5px #b9ae5ebf;
   opacity: 1;
   -webkit-transform: rotate(3deg) translate(0px, -4px);
       -ms-transform: rotate(3deg) translate(0px, -4px);
@@ -9201,8 +9201,8 @@ ul.am-dropdown-content > .am-disabled > a:focus {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   border: solid 2px transparent;
-  border-top-color: #5eb95e;
-  border-left-color: #5eb95e;
+  border-top-color: #b9ae5ebf;
+  border-left-color: #b9ae5ebf;
   border-radius: 50%;
   -webkit-animation: nprogress-spinner 400ms linear infinite;
           animation: nprogress-spinner 400ms linear infinite;
@@ -9352,7 +9352,7 @@ ul.am-dropdown-content > .am-disabled > a:focus {
   background-color: #105ba3;
 }
 .am-share-sns .am-icon-comment {
-  background-color: #5eb95e;
+  background-color: #b9ae5ebf;
 }
 .am-share-footer {
   margin: 10px;
@@ -10060,7 +10060,7 @@ label.am-radio {
 .am-radio.am-success .am-ucheck-radio:hover:not(.am-nohover):not(:disabled) + .am-ucheck-icons,
 .am-checkbox-inline.am-success .am-ucheck-radio:hover:not(.am-nohover):not(:disabled) + .am-ucheck-icons,
 .am-radio-inline.am-success .am-ucheck-radio:hover:not(.am-nohover):not(:disabled) + .am-ucheck-icons {
-  color: #5eb95e;
+  color: #b9ae5ebf;
 }
 .am-checkbox.am-success .am-ucheck-checkbox:checked + .am-ucheck-icons,
 .am-radio.am-success .am-ucheck-checkbox:checked + .am-ucheck-icons,
@@ -10070,7 +10070,7 @@ label.am-radio {
 .am-radio.am-success .am-ucheck-radio:checked + .am-ucheck-icons,
 .am-checkbox-inline.am-success .am-ucheck-radio:checked + .am-ucheck-icons,
 .am-radio-inline.am-success .am-ucheck-radio:checked + .am-ucheck-icons {
-  color: #5eb95e;
+  color: #b9ae5ebf;
 }
 .am-checkbox.am-warning .am-ucheck-checkbox:hover:not(.am-nohover):not(:disabled) + .am-ucheck-icons,
 .am-radio.am-warning .am-ucheck-checkbox:hover:not(.am-nohover):not(:disabled) + .am-ucheck-icons,
@@ -10116,7 +10116,7 @@ label.am-radio {
   color: #dd514c;
 }
 .am-field-valid + .am-ucheck-icons {
-  color: #5eb95e;
+  color: #b9ae5ebf;
 }
 /*
 // Group Addon
@@ -10513,7 +10513,7 @@ tbody.am-collapse.am-in {
   }
 }
 .am-datepicker-success tr.am-datepicker-header {
-  background: #5eb95e;
+  background: #b9ae5ebf;
 }
 .am-datepicker-success td.am-datepicker-day.am-disabled {
   color: #999999;
@@ -10533,7 +10533,7 @@ tbody.am-collapse.am-in {
   color: #1b961b;
 }
 .am-datepicker-success .am-datepicker-caret {
-  border-bottom-color: #5eb95e;
+  border-bottom-color: #b9ae5ebf;
 }
 .am-datepicker-success .am-datepicker-dow {
   color: #367b36;

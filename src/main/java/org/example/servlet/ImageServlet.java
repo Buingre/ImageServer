@@ -11,10 +11,7 @@ import org.example.util.Util;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.Part;
+import javax.servlet.http.*;
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
@@ -33,14 +30,14 @@ import java.util.*;
 @MultipartConfig
 public class ImageServlet extends HttpServlet {
 
-    public static final String IMGGE_DIR = "D://TMP";
+    public static final String IMAGE_DIR = "D://TMP";
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 //        super.doGet(req, resp);
         req.setCharacterEncoding("UTF-8");
         resp.setCharacterEncoding("UTF-8");
-        resp.setContentType("application/json");
+        resp.setContentType("application/json");//响应体数据类型
         //构造要返回的响应体信息---也可以创建一个类
         Map<String,Object> map = new HashMap<>();
         try {
@@ -74,7 +71,7 @@ public class ImageServlet extends HttpServlet {
             // 【2-1】保存上传图片为服务端本地文件
             //问题1.这个路径下有相同的图片(所以先在数据库查)
             //问题2.文件名一样，但md5不一样 (下面的代码可以解决)
-            p.write(IMGGE_DIR+"/"+md5);
+            p.write(IMAGE_DIR+"/"+md5);
 
 
 
@@ -89,12 +86,11 @@ public class ImageServlet extends HttpServlet {
             image.setPath("/"+md5);
             int n = ImageDAO.insert(image);
             map.put("ok",true);
-
         }catch (Exception e){//只要发生异常，就返回500
             e.printStackTrace();
             map.put("ok",false);
             if(e instanceof AppException){
-                map.put("msg",e.getMessage());
+                map.put("msg",e.getMessage());//错误信息
             }else {
                 map.put("msg","未知错误，请联系管理员");
             }
@@ -127,18 +123,23 @@ public class ImageServlet extends HttpServlet {
         //【3】.返回响应数据
 
         String id = req.getParameter("imageId");
-        Object o = null;//定义一个往输出流要打印的东西
-        if(id == null){ //查询所有图片 o = List<Image>
-            //这里是一个list
-            o = ImageDAO.queryAll();
-        } else { //查询指定id的一个图片 o = image对象
-            //这里是一个image对象
-            o = ImageDAO.queryOne(Integer.parseInt(id));
-        }
 
-        //写入body
-        String json = Util.serialize(o);
-        resp.getWriter().println(json);
+        int state = -1;
+        String msg = "";
+
+
+            Object o = null;//定义一个往输出流要打印的东西
+            if (id == null) { //查询所有图片 o = List<Image>
+                //这里是一个list
+                o = ImageDAO.queryAll();
+            } else { //查询指定id的一个图片 o = image对象
+                //这里是一个image对象
+                o = ImageDAO.queryOne(Integer.parseInt(id));
+            }
+
+            //写入body
+            String json = Util.serialize(o);
+            resp.getWriter().println(json);//json放进输出流
 
     }
 
@@ -152,12 +153,12 @@ public class ImageServlet extends HttpServlet {
         //【3】.返回响应数据
 
         String id = req.getParameter("imageId");
-        //TODO:数据库删除和本地硬盘删除 使用十五保证ACID
+        //TODO:数据库删除和本地硬盘删除 使用事务保证ACID
         //数据库根据id删除图片
         Image image = ImageDAO.queryOne(Integer.parseInt(id));
         int n = ImageDAO.delete(Integer.parseInt(id));
         //本地硬盘删除图片文件
-        String path = IMGGE_DIR+image.getPath();
+        String path = IMAGE_DIR+image.getPath();
         File f = new File(path);//本地文件变成Java对象
         f.delete();
         ok(resp);

@@ -16,7 +16,7 @@ public class Util {
     //因为创建比较费时，所以就创建一个 够用
     private static final ObjectMapper M = new ObjectMapper();
 
-    //数据库JDBC
+    //【数据库JDBC】
     //数据库连接池：一个程序用一个数据库连接池，
     //            而这一个数据库连接池  创建的时候 就生成一定数量的连接
     //todo:用单例模式

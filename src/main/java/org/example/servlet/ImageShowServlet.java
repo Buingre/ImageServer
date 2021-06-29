@@ -39,7 +39,7 @@ public class ImageShowServlet extends HttpServlet {
         Image image = ImageDAO.queryOne(Integer.parseInt(id));
         //图片是以二进制数据放在body，所以要指定Content-Type
         resp.setContentType(image.getContentType());
-        String path = ImageServlet.IMGGE_DIR + image.getPath();//本地图片的绝对路径
+        String path = ImageServlet.IMAGE_DIR + image.getPath();//本地图片的绝对路径
         //io输入流读文件
         FileInputStream fis = new FileInputStream(path);
 //        【3】.返回响应数据：服务器本地图片的二进制路径
@@ -49,7 +49,7 @@ public class ImageShowServlet extends HttpServlet {
         while ((len = fis.read(bytes))!=-1){//输入流读，读到字节数组里.没有读到-1说明读的都是有内容的
             os.write(bytes,0,len);//有可能没读满
         }
-        os.flush();
+        os.flush();//刷新缓冲区
         //释放资源
         fis.close();
         os.close();

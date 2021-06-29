@@ -19,13 +19,13 @@ public class ImageDAO {
      */
     public static int queryCount(String md5) {
 //        try {
-//        1.获取数据库链接 Connection
-//        2.获取操作命令对象 Statement (connection + sql)
-//        3.执行SQL：执行前替换占位符
-//        4.如果是查询语句，需要处理结果集 ResultSet
+//           1.获取数据库链接 Connection
+//           2.获取操作命令对象 Statement (connection + sql)
+//           3.执行SQL：执行前替换占位符
+//           4.如果是查询语句，需要处理结果集 ResultSet
 //         }catch(..) {..}
 //        finally {
-//        5.释放资源
+//           5.释放资源
 //         }
         Connection connection = null;
         PreparedStatement ps = null;
