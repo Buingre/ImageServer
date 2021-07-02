@@ -26,8 +26,9 @@ public class Util {
     static {
         DS.setURL("jdbc:mysql://localhost:3306/image_system");
         DS.setUser("root");
-        DS.setPassword("233233");
-        DS.setUseSSL(false);
+        //DS.setPassword("233233");
+        DS.setPassword("12345678");
+        //DS.setUseSSL(false);
         DS.setCharacterEncoding("UTF-8");
     }
 

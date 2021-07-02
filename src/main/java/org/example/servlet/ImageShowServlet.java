@@ -21,8 +21,11 @@ public class ImageShowServlet extends HttpServlet {
     //【白名单--防盗链】
     private static final Set<String> whiteList = new HashSet<>();
     static {//白名单允许获取图片内容：还可以设计为白名单➕黑名单的方式
-        whiteList.add("http://localhost:8080/image_server/");
-        whiteList.add("http://localhost:8080/image_server/index.html");
+//        whiteList.add("http://localhost:8080/image_server/");
+//        whiteList.add("http://localhost:8080/image_server/index.html");
+
+        whiteList.add("http://82.156.227.58:8080/image_server/");
+        whiteList.add("http://82.156.227.58:8080/image_server/index.html");
     }
 
     @Override

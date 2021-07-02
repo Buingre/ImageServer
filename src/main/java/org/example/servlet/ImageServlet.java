@@ -1,7 +1,7 @@
 package org.example.servlet;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.sun.deploy.net.HttpResponse;
+
 import org.apache.commons.codec.digest.DigestUtils;
 import org.example.dao.ImageDAO;
 import org.example.exception.AppException;
@@ -30,8 +30,8 @@ import java.util.*;
 @MultipartConfig
 public class ImageServlet extends HttpServlet {
 
-    public static final String IMAGE_DIR = "D://TMP";
-
+//    public static final String IMAGE_DIR = "D://TMP";
+public static final String IMAGE_DIR = "/root/tmp";
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 //        super.doGet(req, resp);
